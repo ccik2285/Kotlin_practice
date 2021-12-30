@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.myapplication.fragment.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_a"
+            app:destination="@id/a"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/a"
+        android:name="com.example.myapplication.fragment.a"
+        android:label="fragment_a"
+        tools:layout="@layout/fragment_a" >
+        <action
+            android:id="@+id/action_a_to_sectionFragment"
+            app:destination="@id/sectionFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
+    </fragment>
+    <fragment
+        android:id="@+id/c"
+        android:name="com.example.myapplication.fragment.c"
+        android:label="fragment_c"
+        tools:layout="@layout/fragment_c" >
+        <action
+            android:id="@+id/action_c_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sectionFragment"
+        android:name="com.example.myapplication.fragment.sectionFragment"
+        android:label="fragment_section"
+        tools:layout="@layout/fragment_section" >
+        <action
+            android:id="@+id/action_sectionFragment_to_c"
+            app:destination="@id/c" />
+    </fragment>
+</navigation>
