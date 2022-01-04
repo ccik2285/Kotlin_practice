@@ -1,13 +1,16 @@
 package com.example.myapplication.fragment
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import com.example.myapplication.MainActivity
 import com.example.myapplication.R
+import kotlinx.android.synthetic.main.fragment_a.*
 import kotlinx.android.synthetic.main.fragment_c.*
 
 
@@ -25,6 +28,7 @@ class c : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
+
     ): View? {
         // Inflate the layout for this fragment
         option = arguments?.getInt("index")?:-1 // arguments가 null 이면 -1을 반환하겠다.
@@ -38,29 +42,27 @@ class c : Fragment() {
 
         setResult(option)
         home.setOnClickListener {
-            navController.navigate(R.id.action_c_to_mainFragment)
+            navController.navigate(R.id.action_c_to_map2)
         }
     }
-
-    fun setResult(option : Int){
+    fun setResult(option: Int){
         when(option) {
-            1->{
+            1 -> {
                 tv_main.text = "춘식이는 화났어요"  // tv_main.setText
                 tv_sub.text = "화난춘식이"
             }
-            2->{
+            2 -> {
                 tv_main.text = "춘식이는 고구마를 좋아해요"
                 tv_sub.text = "고구마먹는 춘식이"
             }
-            3-> {
+            3 -> {
                 tv_main.text = "춘식이는 새침해요"
                 tv_sub.text = "새침한 춘식이"
             }
-            4-> {
+            4 -> {
                 tv_main.text = "춘식이는 참 엉뚱해요"
                 tv_sub.text = "엉뚱한 춘식이"
             }
         }
     }
-
 }

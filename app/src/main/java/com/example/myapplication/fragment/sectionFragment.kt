@@ -1,5 +1,6 @@
 package com.example.myapplication.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,6 +10,7 @@ import androidx.core.os.bundleOf
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.myapplication.R
+import com.example.myapplication.login
 import kotlinx.android.synthetic.main.fragment_section.*
 
 
@@ -55,7 +57,6 @@ class sectionFragment : Fragment(), View.OnClickListener {
             }
         }
     }
-
     fun navigateWithIndex(index : Int){
         val bundle = bundleOf("index" to index)
         navController.navigate(R.id.action_sectionFragment_to_c,bundle)

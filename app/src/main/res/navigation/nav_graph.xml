@@ -37,8 +37,8 @@
         android:label="fragment_c"
         tools:layout="@layout/fragment_c" >
         <action
-            android:id="@+id/action_c_to_mainFragment"
-            app:destination="@id/mainFragment" />
+            android:id="@+id/action_c_to_map2"
+            app:destination="@id/map2" />
     </fragment>
     <fragment
         android:id="@+id/sectionFragment"
@@ -49,4 +49,8 @@
             android:id="@+id/action_sectionFragment_to_c"
             app:destination="@id/c" />
     </fragment>
+    <activity
+        android:id="@+id/map2"
+        android:name="com.example.myapplication.Map"
+        android:label="Map" />
 </navigation>
